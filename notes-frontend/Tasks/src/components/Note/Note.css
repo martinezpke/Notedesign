@@ -1,0 +1,97 @@
+.wrapper {
+    width: 300px;
+    height: auto;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #33333327;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content {
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    padding: 30px 30px 10px 30px;
+    
+}
+
+.contentClick{
+    display: flex;
+    flex-direction: column;
+    cursor: context-menu;
+    user-select: none;
+}
+
+.wrapper:hover {
+    border: 1 solid #fff;
+    box-shadow: 0 0 5px #0000003f;
+}
+
+.content.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.content .title {
+    margin: 0 auto 15px 0;
+    padding: 5px 1.5rem;
+    border-radius: 5px;
+    background-color: #22ff521d
+}
+
+.content .title label {
+    color: #333;
+    font-size: 1rem;
+}
+
+.content .description {
+    display: flex;
+    text-align: start;
+    width: auto;
+    color: #333;
+    height: 70px;
+    overflow: hidden;
+    white-space: normal;
+    text-overflow: ellipsis;
+
+}
+
+.content .description p {
+    margin: 0;
+}
+
+.wrapper .functions {
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 0px 30px 10px 30px;
+}
+
+.wrapper .functions button {
+    display: flex;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    color: #18af39;
+    border-radius: 100%;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.wrapper .functions button:hover{
+    border-radius: 100%;
+    background-color: #22ff521d;
+    transform: scale(1.1);
+    /* color: #fff; */
+}
+
+.wrapper .functions button, img {
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+    color: #18af39
+}
