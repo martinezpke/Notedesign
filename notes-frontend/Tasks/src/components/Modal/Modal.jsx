@@ -1,7 +1,7 @@
 import React, {  useEffect, useRef, useState } from 'react';
 import './Modal.css'
 
-const Modal = ( {title, description, onClick} ) => {
+const Modal = ( { title, description, onClick, data} ) => {
   const hightText = useRef(null);
   const [isSaveBtn, setIsSaveBtn] = useState(false);
   const [valueTitle, setValueTitle] = useState(title);
@@ -32,6 +32,8 @@ const Modal = ( {title, description, onClick} ) => {
     handleAutoHight(e)
   }
 
+  data(valueTitle, valueDescription)
+
   useEffect(() => {
     handleAutoHight(); // Llamar a la función handleAutoHeight cuando cambie la descripción
   }, [description]);
@@ -45,7 +47,7 @@ const Modal = ( {title, description, onClick} ) => {
           <div className="container-text">
             <div className="modal-header">
               <div className='modal-header-container'>
-                <input type="text" value={valueTitle} onChange={handleChangeTitle}/>
+                <input type="text" value={valueTitle} onChange={handleChangeTitle} placeholder='Titulo'/>
               </div>
 
               <button className='btn-save' onClick={handleClick}>
@@ -54,8 +56,7 @@ const Modal = ( {title, description, onClick} ) => {
 
             </div>
             <div className="modal-content">
-              <textarea ref={hightText} onChange={handleChangeDescription} value={valueDescription} >
-
+              <textarea ref={hightText} onChange={handleChangeDescription} value={valueDescription} placeholder='¿Que estas pensando?'>
               </textarea>
             </div>
           </div>
