@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { selectNote } from '../../api/note.api'
 import Modal from '../Modal/Modal'
 
 import './Note.css'
@@ -9,7 +8,7 @@ function Note({ title, description, funDelete, id }) {
 	const [isOpen, setIsOpen] = useState(false);
 
 	// This function is the action popa
-	const handlePopaNote = async (e) => {
+	const handlePopaNote = async () => {
 	
 		if (isOpen == false) {
 			setIsOpen(true);
@@ -48,6 +47,7 @@ function Note({ title, description, funDelete, id }) {
           title={title}
 					description={description}
           onClick={handlePopaNote}
+					data={(title, description) =>{}}
         />
       )}
 			</div>
