@@ -41,6 +41,10 @@ const Home = () => {
     }
   }
 
+  const handleShouldLoadNotes = () => {
+    setShouldLoadNotes(true);
+  };
+
   useEffect(() => {
     if (shouldLoadNotes) {
       async function loadAllNote() {
@@ -75,7 +79,9 @@ const Home = () => {
           <h1>Notas</h1>
 
           <div className="allNotes">
-            <AddNote />
+            <AddNote 
+              updateData={handleShouldLoadNotes}
+            />
             {listNota.map(note => (
               <Note
                 key={note.id}
