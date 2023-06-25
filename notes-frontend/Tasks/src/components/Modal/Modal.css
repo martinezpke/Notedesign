@@ -104,6 +104,16 @@
     width: auto;
     height: auto;
     gap: 10px;
+    
+}
+
+.option-btn button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    border: 0;
+    background-color: transparent;
 }
 
 .option-btn svg {
