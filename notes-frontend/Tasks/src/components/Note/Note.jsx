@@ -26,7 +26,7 @@ function Note({ title, description, funDelete, id }) {
 						<label>{title}</label>
 					</div>
 					<div className="description">
-						<p>{description}</p>
+						<p className='t'>{description}</p>
 					</div>
 				</div>
 				<div className="functions">
