@@ -3,7 +3,7 @@ import Modal from '../Modal/Modal'
 
 import './Note.css'
 
-function Note({ title, description, funDelete, id }) {
+function Note({ title, description, funDelete, id, updateData}) {
 	const [idNote, setIdNote] = useState(id)
 	const [isOpen, setIsOpen] = useState(false);
 
@@ -48,13 +48,12 @@ function Note({ title, description, funDelete, id }) {
 					description={description}
           onClick={handlePopaNote}
 					data={(title, description) =>{}}
+					id={idNote}
+					updateData={updateData}
         />
       )}
 			</div>
-
-			
 		</>
-
 	)
 }
 
