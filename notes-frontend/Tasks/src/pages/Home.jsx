@@ -89,6 +89,7 @@ const Home = () => {
                 description={note.description}
                 funDelete={handleDeleteNote}
                 id={note.id}
+                updateData={handleShouldLoadNotes}
               />
             ))}
           </div>
