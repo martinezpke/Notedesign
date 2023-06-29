@@ -12,3 +12,7 @@ export const deleteNote = ( id ) => {
 export const CreateNote = ( noteData ) => {
     return axios.post(`http://127.0.0.1:8000/api/tasks/`, noteData)
 }
+
+export const updateNote = ( id, noteData ) => {
+    return axios.put(`http://127.0.0.1:8000/api/tasks/${id}/`, noteData)
+}
