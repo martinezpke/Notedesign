@@ -14,6 +14,8 @@ const Home = () => {
     title: ""
   })
 
+
+  // Esta función ayudara a filtrar la notas por el titulo
   const filterNotes = (notes) => {
     return notes.filter(note => {
       return (
@@ -23,6 +25,7 @@ const Home = () => {
     })
   }
 
+  // función que extrae el valor del buscador para mandarle el valor al estado de filtro
   const handleChangeTitle = (e) => {
     const value = e.target.value;
 
@@ -31,8 +34,8 @@ const Home = () => {
     })
   }
 
+  // esta función borrar la nota
   const handleDeleteNote = async (id) => {
-    console.log("", id);
     try {
       await deleteNote(id);
       setShouldLoadNotes(true);
@@ -41,6 +44,7 @@ const Home = () => {
     }
   }
 
+  // esta función ayudara que los componentes hijos puedan actualizar los datos de la nota
   const handleShouldLoadNotes = () => {
     setShouldLoadNotes(true);
   };
@@ -51,13 +55,14 @@ const Home = () => {
         const res = await getAllNote();
         const array = res.data;
         setNotes(array);
-        console.log(array);
+        
       }
       loadAllNote();
       setShouldLoadNotes(false);
     }
   }, [shouldLoadNotes]);
 
+  // variable que contiene el valor filtrado de las notas
   const listNota = filterNotes(notes);
 
   return (
@@ -87,6 +92,7 @@ const Home = () => {
                 key={note.id}
                 title={note.title}
                 description={note.description}
+                color={note.color_hex}
                 funDelete={handleDeleteNote}
                 id={note.id}
                 updateData={handleShouldLoadNotes}
