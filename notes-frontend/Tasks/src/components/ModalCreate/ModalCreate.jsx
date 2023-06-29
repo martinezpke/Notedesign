@@ -49,8 +49,6 @@ const ModalCreate = ({ onClick, data, isOpen }) => {
                 <input type="text" value={valueTitle} onChange={handleChangeTitle} placeholder='Titulo' />
               </div>
 
-
-
               <button className="modal-close-btn" onClick={isOpen}>&times;</button>
 
             </div>
