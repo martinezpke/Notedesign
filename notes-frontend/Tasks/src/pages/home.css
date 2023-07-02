@@ -60,4 +60,27 @@ section {
         minmax(300px, 0fr)
     );
     gap: 20px;
+
+    
 }
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+
+  
+  
+  .note {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+
+  
