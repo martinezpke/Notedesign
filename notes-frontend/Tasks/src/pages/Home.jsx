@@ -14,6 +14,8 @@ const Home = () => {
     title: ""
   })
 
+  
+
 
   // Esta función ayudara a filtrar la notas por el titulo
   const filterNotes = (notes) => {
@@ -48,6 +50,8 @@ const Home = () => {
   const handleShouldLoadNotes = () => {
     setShouldLoadNotes(true);
   };
+
+  
 
   useEffect(() => {
     if (shouldLoadNotes) {
@@ -88,8 +92,8 @@ const Home = () => {
               updateData={handleShouldLoadNotes}
             />
             {listNota.map(note => (
-              <Note
-                key={note.id}
+              <div className="note" key={note.id}>
+                <Note
                 title={note.title}
                 description={note.description}
                 color={note.color_hex}
@@ -97,6 +101,8 @@ const Home = () => {
                 id={note.id}
                 updateData={handleShouldLoadNotes}
               />
+
+              </div>
             ))}
           </div>
           
