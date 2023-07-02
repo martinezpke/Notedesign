@@ -16,3 +16,7 @@ export const CreateNote = ( noteData ) => {
 export const updateNote = ( id, noteData ) => {
     return axios.put(`http://127.0.0.1:8000/api/tasks/${id}/`, noteData)
 }
+
+export const getAllColor = () => {
+    return axios.get("http://127.0.0.1:8000/api/colors/")
+}
