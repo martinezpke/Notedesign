@@ -4,7 +4,7 @@
     background-color: #fff;
     border-radius: 5px;
     border: 1px solid #33333327;
-    transition: border 0.3s ease, box-shadow 0.3s ease;
+    transition: border 0.3s ease, box-shadow 0.3s ease, width 5s ease, height 5s ease;
 }
 
 .content {
@@ -36,7 +36,8 @@
     margin: 0 auto 15px 0;
     padding: 5px 1.5rem;
     border-radius: 5px;
-    background-color: #22ff521d
+    background-color: #3739381d;
+    transition: background-color 0.5s ease;
 }
 
 .content .title label {
@@ -77,14 +78,14 @@
     border: none;
     cursor: pointer;
     background-color: transparent;
-    color: #18af39;
+    color: #373938;
     border-radius: 100%;
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
 .wrapper .functions button:hover{
     border-radius: 100%;
-    background-color: #22ff521d;
+    /* background-color: #22ff521d; */
     transform: scale(1.1);
     /* color: #fff; */
 }
@@ -93,5 +94,5 @@
     width: 35px;
     height: 35px;
     object-fit: cover;
-    color: #18af39
+    /* color: #18af39 */
 }
