@@ -8,6 +8,8 @@ const Modal = ({ title, description, onClick, data, id, updateData }) => {
   const [valueTitle, setValueTitle] = useState(title);
   const [valueDescription, setValueDescription] = useState(description);
 
+  
+
   // variable que compara si es verdad o falso para cambiar el logo
   const icon = isSaveBtn ? <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
     <path fillRule="evenodd" d="M6.32 2.577a49.255 49.255 0 0111.36 0c1.497.174 2.57 1.46 2.57 2.93V21a.75.75 0 01-1.085.67L12 18.089l-7.165 3.583A.75.75 0 013.75 21V5.507c0-1.47 1.073-2.756 2.57-2.93z" clipRule="evenodd" />
@@ -20,13 +22,14 @@ const Modal = ({ title, description, onClick, data, id, updateData }) => {
     setIsSaveBtn(!isSaveBtn);
   }
 
-
+  // this function change the box hight when there change in value of description
   const handleAutoHight = () => {
     const textarea = hightText.current;
     textarea.style.height = 'auto'; // Reiniciar la altura a "auto" para que se recalcule correctamente
     textarea.style.height = `${textarea.scrollHeight}px`; // Ajustar la altura al valor de desplazamiento del contenido
   };
 
+  // this function is called for update title when there change
   const handleChangeTitle = (e) => {
     const newTitle = e.target.value;
     console.log(newTitle);
@@ -34,11 +37,24 @@ const Modal = ({ title, description, onClick, data, id, updateData }) => {
     setValueTitle(e.target.value);
   };
 
+  // this function is called for update Description when there change
   const handleChangeDescription =  (e) => {
-    setValueDescription(e.target.value);
+    const newText = e.target.value 
+    setValueDescription(newText);
     handleAutoHight(e)
   }
 
+  // this button allow that user can undo
+  const handleUndo = (e) => {
+    document.execCommand('undo');
+  }
+
+  // this button allow that user can undo
+  const handleRedo = (e) => {
+    document.execCommand('redo');
+  }
+
+  // this function allow that update the note
   const updateNotaTime = async (idNota, title, description) => {
     const noteData = {
       title: title,
@@ -118,13 +134,13 @@ const Modal = ({ title, description, onClick, data, id, updateData }) => {
             </button>
 
 
-            <button>
+            <button onClick={handleUndo}>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
                 <path fillRule="evenodd" d="M9.53 2.47a.75.75 0 010 1.06L4.81 8.25H15a6.75 6.75 0 010 13.5h-3a.75.75 0 010-1.5h3a5.25 5.25 0 100-10.5H4.81l4.72 4.72a.75.75 0 11-1.06 1.06l-6-6a.75.75 0 010-1.06l6-6a.75.75 0 011.06 0z" clipRule="evenodd" />
               </svg>
             </button>
 
-            <button>
+            <button onClick={handleRedo}>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
                 <path fillRule="evenodd" d="M14.47 2.47a.75.75 0 011.06 0l6 6a.75.75 0 010 1.06l-6 6a.75.75 0 11-1.06-1.06l4.72-4.72H9a5.25 5.25 0 100 10.5h3a.75.75 0 010 1.5H9a6.75 6.75 0 010-13.5h10.19l-4.72-4.72a.75.75 0 010-1.06z" clipRule="evenodd" />
               </svg>
